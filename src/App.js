@@ -3,23 +3,40 @@ import "./App.css";
 // import TheDate from "./state/TheDate";
 // import Messages from "./Messages";
 // import Counter from "./state/Counter";
-import Tabs from "./state/Tabs";
+// import Tabs from "./state/Tabs";
+import Accordion from "./state-drills/Accordion";
 
-const tabsProp = [
+// const tabsProp = [
+//   {
+//     name: "First tab",
+//     content:
+//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque.",
+//   },
+//   {
+//     name: "Second tab",
+//     content:
+//       "Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+//   },
+//   {
+//     name: "Third tab",
+//     content:
+//       "Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur.",
+//   },
+// ];
+const sections = [
   {
-    name: "First tab",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque.",
+    title: "Section 1",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
-    name: "Second tab",
+    title: "Section 2",
     content:
-      "Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!",
   },
   {
-    name: "Third tab",
+    title: "Section 3",
     content:
-      "Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur.",
+      "Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?",
   },
 ];
 
@@ -27,7 +44,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tabs tabs={tabsProp} />
+        <Accordion sections={sections} />
+        {/* <Tabs tabs={tabsProp} /> */}
         {/* <Counter count={123} />
         <TheDate />
         <Messages name="Messages" unread={0} />
