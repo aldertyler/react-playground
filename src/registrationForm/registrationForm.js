@@ -3,17 +3,40 @@ import React from "react";
 export default class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
-    this.nameInput = React.createRef();
+    this.state = {
+      name: {
+        value: "",
+      },
+      password: {
+        value: "",
+      },
+      repeatPassword: {
+        value: "",
+      },
+    };
+  }
+
+  updateName(name) {
+    this.setState({ name: { value: name } });
+  }
+
+  updatePassword(password) {
+    this.setState({ password: { value: password } });
+  }
+
+  updateRepeatPassword(repeatPassword) {
+    this.setState({ repeatPassword: { value: repeatPassword } });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    // const name = event.target.name.value;
-    // const password = event.target.password.value;
-    // console.log("Name: ", name);
-    // console.log("Password: ", password);
-    const name = this.nameInput.current.value;
-    console.log("Name: ", name);
+    const { name, password, repeatPassword } = this.state;
+
+    console.log("Name: ", name.value);
+    console.log("Password: ", password.value);
+    console.log("Repeat Password: ", repeatPassword.value);
+
+    // potentially submit these values to the server here
   }
 
   render() {
@@ -28,7 +51,7 @@ export default class RegistrationForm extends React.Component {
             className="registration__control"
             name="name"
             id="name"
-            ref={this.nameInput}
+            onChange={(e) => this.updateName(e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -38,7 +61,9 @@ export default class RegistrationForm extends React.Component {
             className="registration__control"
             name="password"
             id="password"
+            onChange={(e) => this.updatePassword(e.target.value)}
           />
+
           <div className="registration__hint">
             6 to 72 characters, must include a number
           </div>
@@ -50,6 +75,7 @@ export default class RegistrationForm extends React.Component {
             className="registration__control"
             name="repeatPassword"
             id="repeatPassword"
+            onChange={(e) => this.updateRepeatPassword(e.target.value)}
           />
         </div>
 
